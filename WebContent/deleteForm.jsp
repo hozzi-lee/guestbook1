@@ -17,7 +17,7 @@ int no = Integer.parseInt(request.getParameter("no"));
 
 	<form action="./delete.jsp?no=<%=no %>" method="post">
 		비밀번호 <input type="password" name="password" value=""> <button type="submit">확인</button>
-		<input type="hidden" name="no" value=<%=no %>>
+		<%-- <input type="hidden" name="no" value=<%=no %>> --%>
 	</form>
 	<a href="./addList.jsp">메인으로 돌아가기</a>
 
