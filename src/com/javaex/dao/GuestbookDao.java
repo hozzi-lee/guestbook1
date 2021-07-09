@@ -59,13 +59,12 @@ public class GuestbookDao {
 					" INSERT INTO "
 					+ " 		guestbook "
 					+ " VALUES ( "
-					+ " 	sqc_no.NEXTVAL, ?, ?, ?, ? ) "
+					+ " 	sqc_no.NEXTVAL, ?, ?, ?, sysdate ) "
 					);
 
 			pstmt.setString(1, g.getName());
 			pstmt.setString(2, g.getPassword());
 			pstmt.setString(3, g.getContent());
-			pstmt.setString(4, "sysdate");
 			
 			count = pstmt.executeUpdate();
 			
@@ -94,16 +93,19 @@ public class GuestbookDao {
 					" SELECT "
 					+ " 	no, "
 					+ " 	name, "
+					+ " 	password, "
 					+ " 	content, "
 					+ " 	reg_date "
 					+ " FROM "
 					+ " 	guestbook "
+					+ " ORDER BY "
+					+ " 	no ASC "
 					);
 			
 			rs = pstmt.executeQuery();
 			
 			while (rs.next()) {
-				guestbookList.add(new GuestbookVo(rs.getInt("no"), rs.getString("name"), rs.getString("content"), rs.getString("reg_date")));
+				guestbookList.add(new GuestbookVo(rs.getInt("no"), rs.getString("name"), rs.getString("password"), rs.getString("content"), rs.getString("reg_date")));
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -125,15 +127,17 @@ public class GuestbookDao {
 					" DELETE FROM "
 					+ " 		guestbook "
 					+ " WHERE "
-					+ " 	password = ? "
+					+ " 	no = ? "
+					+ " 	AND password = ? "
 					);
-			
-			pstmt.setString(1, g.getPassword());
+			 
+			pstmt.setInt(1, g.getNo());
+			pstmt.setString(2, g.getPassword());
 			
 			count = pstmt.executeUpdate();
 			
 			if (count > 0) {
-				System.out.println("[" + g.getNo() + "]번 " + "[" + g.getName() + "]님이 글이 삭제 되었습니다.");
+				System.out.println("[" + g.getNo() + "]번 글이 삭제 되었습니다.");
 			} else {
 				System.out.println("ERROR: " + count + " [관리자에게 문의하세요]");
 			}

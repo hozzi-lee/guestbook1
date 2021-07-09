@@ -9,7 +9,12 @@
 
 GuestbookDao gbDao = new GuestbookDao();
 
-response.sendRedirect("./addList.jsp");
+int no = Integer.parseInt(request.getParameter("no"));
+String password = request.getParameter("password");
+
+gbDao.delete(new GuestbookVo(no, password));
+
+// response.sendRedirect("./addList.jsp");
 
 %>
 

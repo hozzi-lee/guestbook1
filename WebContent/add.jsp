@@ -19,7 +19,7 @@ GuestbookVo gbVo = new GuestbookVo(name, password, content);
 
 gbDao.insert(gbVo);
 
-response.sendRedirect("./addList.jsp");
+// response.sendRedirect("./addList.jsp");
 
 %>
 

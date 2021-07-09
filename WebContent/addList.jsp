@@ -25,13 +25,13 @@ GuestbookDao gbDao = new GuestbookDao();
 				<td>이름</td>
 				<td><input type="text" name="name" value=""></td>
 				<td>비밀번호</td>
-				<td><input type="text" name="password" value=""></td>
+				<td><input type="password" name="password" value=""></td>
 			</tr>
 			<tr>
 				<td colspan="4"><textarea name="content" cols="60" rows="5" style="resize: none;"></textarea></td>
 			</tr>
 			<tr>
-				<td colspan="4"><button type="submit">확인</button><!-- <input type="hidden" name="date" value="sysdate"> --></td>
+				<td colspan="4"><button type="submit">확인</button></td>
 			</tr>
 		</table>
 	</form>
@@ -47,7 +47,7 @@ GuestbookDao gbDao = new GuestbookDao();
 			<td><%=g.getNo()%></td>
 			<td><%=g.getName()%></td>
 			<td><%=g.getDate()%></td>
-			<td><a href="./deleteForm.jsp">삭제</a></td>
+			<td><a href="./deleteForm.jsp?no=<%=g.getNo() %>">삭제</a></td>
 		</tr>
 		<tr>
 			<td colspan="4"><%=g.getContent()%></td>
