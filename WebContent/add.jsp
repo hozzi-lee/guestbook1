@@ -15,9 +15,9 @@ String password = request.getParameter("password");
 String content = request.getParameter("content");
 // String date = request.getParameter("date");
 
-GuestbookVo gbVo = new GuestbookVo(name, password, content);
+// GuestbookVo gbVo = new GuestbookVo(name, password, content);
 
-gbDao.insert(gbVo);
+gbDao.insert(new GuestbookVo(name, password, content));
 
 response.sendRedirect("./addList.jsp");
 

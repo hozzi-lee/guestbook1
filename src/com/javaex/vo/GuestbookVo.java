@@ -13,14 +13,6 @@ public class GuestbookVo {
 	public GuestbookVo() {
 
 	}
-
-	public GuestbookVo(int n) {
-		this.no = n;
-	}
-
-	public GuestbookVo(String p) {
-		this.password = p;
-	}
 	
 	public GuestbookVo(int n, String p) {
 		this.no = n;
@@ -31,20 +23,6 @@ public class GuestbookVo {
 		this.name = na;
 		this.password = p;
 		this.content = c;
-	}
-	
-	public GuestbookVo(int n, String na, String c, String d) {
-		this.no = n;
-		this.name = na;
-		this.content = c;
-		this.date = d;
-	}
-	
-	public GuestbookVo(String na, String p, String c, String d) {
-		this.name = na;
-		this.password = p;
-		this.content = c;
-		this.date = d;
 	}
 
 	public GuestbookVo(int n, String na, String p, String c, String d) {

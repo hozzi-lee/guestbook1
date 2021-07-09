@@ -20,7 +20,7 @@ GuestbookDao gbDao = new GuestbookDao();
 <body>
 
 	<form action="add.jsp" method="post">
-		<table border=1>
+		<table border="1" width="500">
 			<tr>
 				<td>이름</td>
 				<td><input type="text" name="name" value=""></td>
@@ -28,7 +28,7 @@ GuestbookDao gbDao = new GuestbookDao();
 				<td><input type="password" name="password" value=""></td>
 			</tr>
 			<tr>
-				<td colspan="4"><textarea name="content" cols="60" rows="5" style="resize: none;"></textarea></td>
+				<td colspan="4"><textarea name="content" cols="65" rows="5" style="resize: none;"></textarea></td>
 			</tr>
 			<tr>
 				<td colspan="4"><button type="submit">확인</button></td>
@@ -42,7 +42,7 @@ GuestbookDao gbDao = new GuestbookDao();
 	for (GuestbookVo g : gbDao.getList()) {
 	%>
 	
-	<table border=1>
+	<table border="1" width="500">
 		<tr>
 			<td><%=g.getNo()%></td>
 			<td><%=g.getName()%></td>
