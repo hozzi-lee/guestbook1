@@ -27,10 +27,10 @@ public class GuestbookVo {
 		this.password = p;
 	}
 	
-	public GuestbookVo(String na, String c, String d) {
+	public GuestbookVo(String na, String p, String c) {
 		this.name = na;
+		this.password = p;
 		this.content = c;
-		this.date = d;
 	}
 	
 	public GuestbookVo(int n, String na, String c, String d) {

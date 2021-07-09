@@ -15,7 +15,7 @@ int no = Integer.parseInt(request.getParameter("no"));
 </head>
 <body>
 
-	<form action="./delete.jsp?no=<%=no %>" method="get">
+	<form action="./delete.jsp?no=<%=no %>" method="post">
 		비밀번호 <input type="password" name="password" value=""> <button type="submit">확인</button>
 		<input type="hidden" name="no" value=<%=no %>>
 	</form>

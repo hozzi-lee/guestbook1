@@ -14,7 +14,7 @@ String password = request.getParameter("password");
 
 gbDao.delete(new GuestbookVo(no, password));
 
-// response.sendRedirect("./addList.jsp");
+response.sendRedirect("./addList.jsp");
 
 %>
 
